@@ -18,26 +18,28 @@ const NewsletterForm = ({
   const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const res = await fetch(apiUrl, {
-      body: JSON.stringify({
-        email: inputEl.current.value,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    })
+    if (inputEl.current) {
+      const res = await fetch(apiUrl, {
+        body: JSON.stringify({
+          email: inputEl.current.value,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      })
 
-    const { error } = await res.json()
-    if (error) {
-      setError(true)
-      setMessage('Votre adresse e-mail est invalide ou vous êtes déjà abonné !')
-      return
+      const { error } = await res.json()
+      if (error) {
+        setError(true)
+        setMessage('Votre adresse e-mail est invalide ou vous êtes déjà abonné !')
+        return
+      }
+
+      inputEl.current.value = ''
+      setError(false)
+      setSubscribed(true)
     }
-
-    inputEl.current.value = ''
-    setError(false)
-    setSubscribed(true)
   }
 
   const onSubmit = (_: React.FormEvent<HTMLFormElement>) => {
@@ -72,8 +74,9 @@ const NewsletterForm = ({
         </div>
         <div className="mt-2 flex w-full rounded-md shadow-sm sm:ml-3 sm:mt-0">
           <button
-            className={`w-full rounded-md bg-primary-500 px-4 py-2 font-medium text-white sm:py-0 ${subscribed ? 'cursor-default' : 'hover:bg-primary-700 dark:hover:bg-primary-400'
-              } focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 dark:ring-offset-black`}
+            className={`w-full rounded-md bg-primary-500 px-4 py-2 font-medium text-white sm:py-0 ${
+              subscribed ? 'cursor-default' : 'hover:bg-primary-700 dark:hover:bg-primary-400'
+            } focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 dark:ring-offset-black`}
             type="submit"
             disabled={subscribed}
           >
