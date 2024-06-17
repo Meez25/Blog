@@ -4,6 +4,8 @@ import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 
+import NewsletterFormFR from '@/components/NewsletterFormFR'
+
 const MAX_DISPLAY = 5
 
 export default function Home({ posts }) {
@@ -57,9 +59,9 @@ export default function Home({ posts }) {
                         <Link
                           href={`/blog/${slug}`}
                           className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                          aria-label={`Read more: "${title}"`}
+                          aria-label={`Lire plus: "${title}"`}
                         >
-                          Read more &rarr;
+                          Lire plus &rarr;
                         </Link>
                       </div>
                     </div>
@@ -77,13 +79,13 @@ export default function Home({ posts }) {
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
             aria-label="All posts"
           >
-            All Posts &rarr;
+            Tous les articles &rarr;
           </Link>
         </div>
       )}
       {siteMetadata.newsletter?.provider && (
         <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
+          <NewsletterFormFR title="S'abonner à la newsletter" />
         </div>
       )}
     </>

@@ -76,7 +76,7 @@ const siteMetadata = {
       // example: https://giscus.app/themes/custom_example.css
       themeURL: '',
       // This corresponds to the `data-lang="en"` in giscus's configurations
-      lang: 'en',
+      lang: 'fr',
     },
   },
   search: {
@@ -87,9 +87,9 @@ const siteMetadata = {
     // provider: 'algolia',
     // algoliaConfig: {
     //   // The application ID provided by Algolia
-    //   appId: 'R2IYF7ETH7',
+    //   appId: 'FVZLD53RXO',
     //   // Public API key: it is safe to commit it
-    //   apiKey: '599cec31baffa4868cae4e79f180729b',
+    //   apiKey: '80422693d8788e021203c855c0d24a13',
     //   indexName: 'docsearch',
     // },
   },

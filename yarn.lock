@@ -2769,6 +2769,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@piwikpro/next-piwik-pro@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@piwikpro/next-piwik-pro@npm:3.1.0"
+  dependencies:
+    "@piwikpro/react-piwik-pro": ^2.1.0
+  peerDependencies:
+    next: ">=13.0.0 <15.0.0"
+  checksum: 46e66fae71a9d359cfe2cd9ea4146cdc848d4c7accdfa93ea517d70a7e2fb1c65915f5f52829f50c9e8c4ae9a3c36d9a706f1390e7ea3ce52a10d0588b6d75b2
+  languageName: node
+  linkType: hard
+
+"@piwikpro/react-piwik-pro@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@piwikpro/react-piwik-pro@npm:2.1.0"
+  dependencies:
+    "@piwikpro/tracking-base-library": ^1.2.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: d7df5352c9078e7ea7e85b432914f5ec61873bdbc4b2173d57133a98f61ed3dfb0b029b2eedc0a43376d3d4007883cb101742239e365c05d9d2fc37b10497373
+  languageName: node
+  linkType: hard
+
+"@piwikpro/tracking-base-library@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@piwikpro/tracking-base-library@npm:1.2.0"
+  checksum: 67e6be85f6b3c205da676e7ccf4791d0779d87f87d8fbb101f7dc0373878b111f2bb35913c3c38a79c31a1823c6e978538deab630abda9001ad0f69820b7d4d1
+  languageName: node
+  linkType: hard
+
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
@@ -10900,6 +10930,7 @@ __metadata:
   dependencies:
     "@headlessui/react": 1.7.19
     "@next/bundle-analyzer": 14.2.3
+    "@piwikpro/next-piwik-pro": ^3.1.0
     "@svgr/webpack": ^8.0.1
     "@tailwindcss/forms": ^0.5.7
     "@tailwindcss/typography": ^0.5.12
