@@ -7,20 +7,11 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
-  },
-  {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'MemoFamille',
+    description:
+      "Mon application mobile qui réunit les générations autour de la mémoire familiale. Chacun peut ajouter des photos et vidéos qui s'intégreront dans une frise chronologique familiale. L'interface est simple et intuitive pour que tout le monde puisse l'utiliser.",
+    imgSrc: '/static/images/Projet_memofamille/Sortie MemoFamille 1920x1080.jpg',
+    href: 'https://memofamille.com',
   },
 ]
 
