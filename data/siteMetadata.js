@@ -7,7 +7,7 @@ const siteMetadata = {
     "Un blog sur le développement, le développement personnel, l'entrepreneuriat, le sport et la famille !",
   language: 'fr-FR',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
+  siteUrl: 'https://www.humeursdundeveloppeur.fr',
   siteRepo: 'https://github.com/Meez25/Blog',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
