@@ -1,0 +1,93 @@
+---
+title: "Point d'étape sur MemoFamille"
+date: '2024-06-21'
+lastmod: '2024-06-21'
+tags: ['MemoFamille']
+draft: false
+summary: "Point d'avancement sur MemoFamille, SEO, multi-famille et nouveau lecteur vidéo"
+images: ['/static/images/twitter-card.png']
+---
+
+## Introduction
+
+C'est l'été ! Profitons-en pour faire le point sur mes chantiers actuels concernant MemoFamille.
+
+<TOCInline toc={props.toc} exclude="Introduction" />
+
+## Visibilité SEO, flyers et partenariat avec la marque Alsace
+
+J'ai créé le domaine memofamille.com au printemps 2023 en sachant que cela prendrait du temps pour être référencé.
+
+J'ai sorti la section blog quelques semaines après pour écrire des articles et commencer à placer des mots-clés. Enfin... c'est ma compagne qui écrit les articles, elle est rédactrice web.
+
+Elle en a écrit 1 à 2 par mois pour MemoFamille, ce qui a permis à MemoFamille de commencer à apparaître sur certains mots-clés.
+
+L'application est sortie fin Avril 2024, et mon objectif est d'avoir le plus de trafic sur le site internet pour faire des statistiques sur ce qui plaît et ce qui ne plaît pas.
+
+Ce mois-ci est également le premier mois où je travaille avec une agence digitale sur Mulhouse qui m'aidera à me référencer le mieux possible.
+
+J'ai obtenu un partenariat avec la marque Alsace ! Ce partenariat me permet d'afficher leur beau logo sur le [site internet de MemoFamille](https://memofamille.com), et j'apparais également sur le [site internet de la marque Alsace](https://www.marque.alsace/partenaire/memofamille).
+
+![Beau logo de la marque Alsace](/static/images/point-memofamille/Logo-alsace.png)
+
+J'ai également imprimé des flyers que j'ai distribués avec la grosse aide de mes proches. Dessus, il y a 2 QR codes qui mènent aux play store et l'app store. Je n'ai cependant pas trouvé comment faire des statistiques sur les personnes qui utilisent ces QR codes.
+Si vous savez comment faire, n'hésitez pas à le dire en commentaire !
+
+![La dernière version du flyer MemoFamille](/static/images/point-memofamille/Flyer_A5.jpg)
+
+J'en ai placé environ 1500 en Alsace principalement, mais pour l'instant je suis incapable de dire si c'est plus ou moins efficace que le SEO à mon échelle.
+
+La courbe SEO dans Google Search Console est en dent de scie mais avec une tendance positive tout de même.
+
+Voici un graphique sur 1 an.
+
+![Courbe des impressions de Google Search Console sur 1 an](/static/images/point-memofamille/google_search_console.png)
+
+Pour l'analyse du trafic j'utilise PiwikPro qui est un outil qui respecte le Règlement général sur la protection des données (RGPD).
+J'enregistre pour l'instant quelques visites par semaine.
+
+On fera un autre point SEO dans un prochain article !
+
+## Multi-famille à venir dans l'application
+
+Bonne nouvelle, la possibilité d'être dans plusieurs familles est bientôt là!
+
+C'est un besoin que j'avais déjà identifié pour moi-même, voulant être présent dans le groupe famille de ma belle-famille et ma propre famille mais ce n'était pas encore possible.
+Ma compagne avait le même besoin et j'ai également des utilisateurs qui me remontent ce besoin.
+
+J'ai donc changé la base de données et ajouté la notion de Profil.
+Au lieu d'avoir un lien Utilisateur -> Famille, j'ai maintenant un lien Utilisateur -> Profil -> Famille. Cela permet à un utilisateur d'avoir plusieurs profils.
+
+![Modification de la base de donnée](/static/images/point-memofamille/profil.png)
+
+Cela permet d'ajouter une couche d'abstraction entre un utilisateur et une famille.
+Pour l'instant le backend est prêt et je suis en train d'ajouter les menus pour pouvoir gérer ses profils et qu'ils soient le plus simple à utiliser.
+
+Par exemple, quand on ajoute une photo, est-ce qu'on préfère choisir dans quelle famille la mettre ?
+Ou est-ce qu'on préfère choisir dans quelle famille ne pas la mettre ? 
+Ou bien est-ce qu'on préfèrerait choisir une option dans ses préférences pour décider de cela ?
+
+Faites-moi savoir ce que vous préférez en gardant un mot à l'esprit: SIMPLICITÉ.
+
+## Nouveau lecteur vidéo
+
+Pour développer MemoFamille, j'utilise React Native et Expo.
+Quand j'ai fait la mise à jour vers Expo 51, je me suis rendu compte que la bibliothèque tiers ["react-native-media-controls"](https://www.npmjs.com/package/react-native-media-controls) que j'utilisais pour afficher les contrôles de la vidéo, utilise une bibliothèque obsolète. 
+J'ai alors dû chercher une alternative. Après quelques heures de recherche et de test, j'ai trouvé ["react-native-media-console"](https://github.com/LunatiqueCoder/react-native-media-console) qui inclut aussi la vidéo et pas seulement les contrôles. Je suis en train de mettre à jour les différents composants react et j'en profite pour refactoriser mon code.
+
+Je trouve le nouveau player plus élégant que l'ancien mais vous me direz ce que vous en pensez.
+
+Pour le son des vidéos (muet ou non), je pense à déplacer cet état au niveau de l'application en plus de chaque composant, ce qui permettra d'avoir un comportement par défaut choisi par l'utilisateur.
+
+Par exemple, si on enlève le son d'une vidéo, les autres vidéos commenceront par défaut sans le son.
+Et même logique avec le son.
+
+
+
+Voici le tour des nouvelles de MemoFamille !
+
+N'hésitez pas à me faire vos retour ici ou bien sur yann@memofamille.com
+
+Belle journée !
+
+Yann
