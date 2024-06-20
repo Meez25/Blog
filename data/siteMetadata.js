@@ -12,7 +12,7 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   // mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'address@yoursite.com',
+  email: 'yann@memofamille.com',
   github: 'https://github.com/Meez25',
   // x: 'https://twitter.com/x',
   // twitter: 'https://twitter.com/Twitter',
