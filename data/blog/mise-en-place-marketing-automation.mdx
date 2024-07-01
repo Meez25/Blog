@@ -1,0 +1,79 @@
+---
+title: "Mise en place d'une automatisation d'e-mail"
+date: '2024-07-01'
+lastmod: '2024-07-01'
+tags: ['memofamille']
+draft: false
+summary: "Comment mieux guider les utilisateurs avec un système d'email automatique"
+images: ['/static/images/twitter-card.png']
+---
+
+## Introduction
+
+Un certain pourcentage des utilisateurs qui s'inscrivent sur MemoFamille ne rejoignent jamais de groupe famille ou bien ne téléchargent pas l'application. C'est le problème que j'essaie de résoudre dans cet article.
+
+<TOCInline toc={props.toc} exclude="Introduction" />
+
+## La problématique
+
+Comme je l'écrivais en introduction, peu de personnes qui créent un compte, soit via [memofamille.com](https://memofamille.com), soit via l'application mobile testent réellement l'application.
+
+Pour démarrer avec MemoFamille, une fois son compte créé, il faut au choix, **créer une famille**, ou bien en **rejoindre** une avec un code.
+C'est une information qui est demandée juste après l'inscription.
+Certains utilisateurs ne choisissent jamais. La raison m'échappe encore. Peut-être que je n'explique pas assez le concept du code famille ? Peut-être un problème technique que je n'ai pas vu ? Si vous êtes dans ce cas, n'hésitez pas, ça m'intéresse beaucoup !
+
+J'aimerais aussi que plus d'utilisateurs téléchargent l'application.
+
+Mon objectif serait au moins de guider l'utilisateur vers la création d'une publication afin qu'il puisse juger de la valeur de ce que MemoFamille apporte.
+
+## Mise en place de l'outil Brevo
+
+Pour tenter de résoudre ce problème, j'ai mis en place une solution d'e-mail automatisée.
+
+J'ai choisi Brevo, pour ses fonctionnalités et son tarif. Je n'ai pas encore le recul nécessaire pour le recommander mais je n'ai pas eu de problème pour le moment.
+
+Grâce à cet outil, je peux créer des utilisateurs automatiquement dans Brevo, et ils rentrent automatiquement dans un processus automatisé.
+
+A l'inscription de l'utilisateur, mon backend fait une requête API vers Brevo et enregistre l'utilisateur dans une liste "Tous les contacts".
+
+Dès qu'un utilisateur rejoint une famille, mon backend met à jour l'utilisateur dans Brevo avec son code famille.
+Idem dès qu'il se connecte avec l'application mobile.
+
+Avec ceci, je suis capable de mettre en place un processus qui ressemble à ceci :
+
+![Schéma d'un processus d'email automatique](/static/images/mise-en-place-marketing-automation/automatisation_brevo.png)
+
+30 minutes après l'inscription, je regarde si l'utilisateur a rejoint une famille et s'il a téléchargé l'application. Selon sa situation à ce moment-là, Brevo envoi un e-mail que j'ai rédigé qui apporte des indications supplémentaires.
+
+Par exemple, comment rejoindre une famille ou comment télécharger l'application.
+Si l'utilisateur a tout fait, il rentre dans une liste "Famille & App". Sinon j'attends une semaine avant de vérifier l'état d'avancement de l'utilisateur.
+Je propose encore mon aide par email si besoin à ce moment-là.
+
+Deux semaines plus tard, je vérifie encore, si l'utilisateur n'a pas fait le nécessaire, je le mets dans une liste "N'a pas donné suite".
+
+Je précise aussi qu'à tout moment l'utilisateur peut choisir de ne plus recevoir de mails.
+
+Ce processus que j'ai mis en place, je l'ai nommé "OnBoarding" dans Brevo. A la sortie de ce processus, les utilisateurs sont soit dans la liste "Famille & App", soit dans "N'a pas donné suite"
+
+Avec ceci, j'espère réduire le pourcentage d'utilisateurs qui ne vont pas au bout de ce processus d'inscription.
+
+## Ce que j'aimerais encore faire 
+
+Maintenant que j'ai ces 2 listes, j'aimerais également :
+
+- Prévenir les membres d'une famille une semaine avant la fin de la période d'essai qu'elle touche bientôt à sa fin. Et également la veille.
+- Guider les utilisateurs vers la création d'une publication.
+
+Ces 2 actions devraient augmenter la conversion sur les abonnements à la sortie de la période d'essai.
+
+Je pourrais également faire des tests A/B sur les différents e-mails que j'ai rédigés.
+
+Pour rappel, les tests A/B sont une technique de test empirique où on propose 2 visuels ayant le même objectif à l'utilisateur et on analyse quelle version a le meilleur taux de succès.
+
+Avec ces différentes actions, je souhaite qu'un plus grand nombre de personnes saisissent l'opportunité de tester MemoFamille et jugent de ce que l'application peut apporter à leur famille.
+
+Dans quelques semaines j'aurais du recul sur ces actions et ça sera l'occasion de vous en faire part.
+
+Si vous avez de l'expérience avec ce genre d'automatisation, je suis toujours preneur de conseils et retour d'expérience !
+
+Yann
